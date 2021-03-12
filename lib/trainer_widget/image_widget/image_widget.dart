@@ -56,18 +56,20 @@ class _ImageWidgetState extends State<ImageWidget> {
         .toList();
 
     return Stack(children: [
-      CarouselSlider(
-        items: imageSliders,
-        options: CarouselOptions(
-            height: height,
-            autoPlay: true,
-            enlargeCenterPage: true,
-            aspectRatio: 2.0,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _current = index;
-              });
-            }),
+      Positioned(
+               child: CarouselSlider(
+          items: imageSliders,
+          options: CarouselOptions(
+              height: height,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              aspectRatio: 2.0,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _current = index;
+                });
+              }),
+        ),
       ),
       Positioned(
         top: 200,
@@ -77,8 +79,8 @@ class _ImageWidgetState extends State<ImageWidget> {
           children: imgList.map((url) {
             int index = imgList.indexOf(url);
             return Container(
-              width: 12.0,
-              height: 12.0,
+              width: 8.0,
+              height: 8.0,
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,

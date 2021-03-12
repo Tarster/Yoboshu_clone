@@ -57,23 +57,20 @@ class MyWidget extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           clipBehavior: Clip.hardEdge,
-
           children: <Widget>[
-
             Container(
               //color: Colors.black,
-              width: 390,
+              width: 390.0,
               child: ImageWidget(),
             ),
-            Positioned(
-              top: 250,
-              width: 390,
+
+            Container(
+              margin: EdgeInsets.only(top: 230.0),
               child: SingleChildScrollView(
                 child: ClipRRect(
-
                   borderRadius: BorderRadius.circular(50.0),
                   child: Container(
-                    padding: EdgeInsets.only(top: 10.0) ,
+                    padding: EdgeInsets.only(top: 18.0),
                     color: Colors.white,
                     child: TrainerDetailedProfile(),
                   ),
