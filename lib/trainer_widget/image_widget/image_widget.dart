@@ -19,6 +19,7 @@ class _ImageWidgetState extends State<ImageWidget> {
   ];
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height / 2;
     final List<Widget> imageSliders = imgList
         .map((item) => Container(
               child: Container(
@@ -54,10 +55,11 @@ class _ImageWidgetState extends State<ImageWidget> {
             ))
         .toList();
 
-    return Column(children: [
+    return Stack(children: [
       CarouselSlider(
         items: imageSliders,
         options: CarouselOptions(
+            height: height,
             autoPlay: true,
             enlargeCenterPage: true,
             aspectRatio: 2.0,
@@ -67,22 +69,24 @@ class _ImageWidgetState extends State<ImageWidget> {
               });
             }),
       ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: imgList.map((url) {
-          int index = imgList.indexOf(url);
-          return Container(
-            width: 8.0,
-            height: 8.0,
-            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: _current == index
-                  ? Color.fromRGBO(0, 0, 0, 0.9)
-                  : Color.fromRGBO(0, 0, 0, 0.4),
-            ),
-          );
-        }).toList(),
+      Positioned(
+        top: 200,
+        left: 150,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: imgList.map((url) {
+            int index = imgList.indexOf(url);
+            return Container(
+              width: 12.0,
+              height: 12.0,
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _current == index ? Color(0xFF6c4791) : Colors.white,
+              ),
+            );
+          }).toList(),
+        ),
       ),
     ]);
   }

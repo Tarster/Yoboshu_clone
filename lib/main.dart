@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:trainer_clone/trainer_widget/image_widget/image_widget.dart';
 
@@ -54,16 +55,28 @@ class MyWidget extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Stack(
-          alignment: Alignment.topCenter,
+          fit: StackFit.expand,
+          clipBehavior: Clip.hardEdge,
+
           children: <Widget>[
-            ImageWidget(),
+
+            Container(
+              //color: Colors.black,
+              width: 390,
+              child: ImageWidget(),
+            ),
             Positioned(
               top: 250,
-              child: Container(
-                //color: Colors.black,
-                width: 390,
-                child: SingleChildScrollView(
-                  child: TrainerDetailedProfile(),
+              width: 390,
+              child: SingleChildScrollView(
+                child: ClipRRect(
+
+                  borderRadius: BorderRadius.circular(50.0),
+                  child: Container(
+                    padding: EdgeInsets.only(top: 10.0) ,
+                    color: Colors.white,
+                    child: TrainerDetailedProfile(),
+                  ),
                 ),
               ),
             ),
