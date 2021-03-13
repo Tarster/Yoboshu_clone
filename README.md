@@ -7,5 +7,8 @@ A Clone of YOBOSHU TRAINER'S DETAIL PAGE
 1. Certified Shield Icon on Font Awesome is paid.
 2. Fonts are different. Tried my best to achieve the original look.
 3. In Home Icon is not similar as it's available as a pro icon.
+4. Not using MediaQuery object to get the dynamic screen height 'working on it'.
+
+ 
 
 
