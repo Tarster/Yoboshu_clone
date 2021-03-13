@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:trainer_clone/trainer_widget/helper/pricing.dart';
 import 'package:trainer_clone/user/userdata.dart';
 import 'helper/Text_vertical_line.dart';
 import 'helper/custom_list_builder.dart';
@@ -142,6 +143,11 @@ class TrainerDetailedProfile extends StatelessWidget {
           ),
           IconText(
               titleText: 'Mode of Training', buildView: user1.modeOfTraining),
+          Divider(
+            height: 50,
+            thickness: _thickness,
+          ),
+          Pricing(user1.sessionRate),
           Divider(
             height: 50,
             thickness: _thickness,

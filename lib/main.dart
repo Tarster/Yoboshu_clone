@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:trainer_clone/trainer_widget/helper/pricing.dart';
 import 'package:trainer_clone/trainer_widget/image_widget/image_widget.dart';
 
 import 'package:trainer_clone/trainer_widget/trainer_profile_details.dart';
@@ -32,6 +32,16 @@ class MyApp extends StatelessWidget {
             color: Color(0xFF6c4791),
             fontSize: 15,
           ),
+          headline4: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF6c4791),
+            fontSize: 21,
+          ),
+          headline5: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black45,
+            fontSize: 18,
+          ),
           bodyText1: TextStyle(
             fontWeight: FontWeight.normal,
             color: Colors.black,
@@ -44,7 +54,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: MyWidget(),
+      home: MyWidget
+        (),
     );
   }
 }
@@ -89,7 +100,7 @@ class MyTest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(child: TrainerDetailedProfile()),
+        child: SingleChildScrollView(child: Pricing(150)),
       ),
     );
   }
